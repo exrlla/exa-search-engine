@@ -11,10 +11,13 @@ search = input("Search here:")
 
 response = exa.search(
     search,
-    num_results=10,
+    num_results=5,
     type="keyword",
-    include_domains=["www.react.dev"],
+    include_domains=["https://www.tiktok.com/"],
     use_autoprompt=False,
 )
 
-print(response)
+for result in response.results:
+    print()
+    print(f"Title: {result.title}")
+    print(f"URL: {result.url}")
